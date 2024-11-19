@@ -16,6 +16,9 @@ public class MovimentoJpaController {
     public MovimentoJpaController() {
         this.emf = Persistence.createEntityManagerFactory("cadastroserverPU");
     }
+    public MovimentoJpaController(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();

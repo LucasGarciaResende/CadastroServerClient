@@ -34,7 +34,7 @@ public class Movimento implements Serializable {
     private Character tipo;
     @Basic(optional = false)
     @Column(name = "valor_unitario")
-    private long valorUnitario;
+    private float valorUnitario;
     @JoinColumn(name = "idpessoa", referencedColumnName = "idpessoa")
     @ManyToOne(optional = false)
     private Pessoa idpessoa;
@@ -44,6 +44,7 @@ public class Movimento implements Serializable {
     @JoinColumn(name = "idusuario", referencedColumnName = "idusuario")
     @ManyToOne(optional = false)
     private Usuario idusuario;
+    
 
     public Movimento() {
     }
@@ -82,11 +83,11 @@ public class Movimento implements Serializable {
         this.tipo = tipo;
     }
 
-    public long getValorUnitario() {
+    public float getValorUnitario() {
         return valorUnitario;
     }
 
-    public void setValorUnitario(long valorUnitario) {
+    public void setValorUnitario(float valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
 
@@ -137,6 +138,10 @@ public class Movimento implements Serializable {
     @Override
     public String toString() {
         return "cadastroserver.model.Movimento[ idmovimento=" + idmovimento + " ]";
+    }
+
+    public void setIdpessoa(int pessoaId) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
